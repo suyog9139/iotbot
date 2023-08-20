@@ -2,10 +2,9 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-
+from telegram_bot import run_bot  # Import the run_bot function from the new module
 
 def main():
-    """Run administrative tasks."""
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "server.settings")
     try:
         from django.core.management import execute_from_command_line
@@ -15,8 +14,37 @@ def main():
             "available on your PYTHONPATH environment variable? Did you "
             "forget to activate a virtual environment?"
         ) from exc
-    execute_from_command_line(sys.argv)
 
+    # Your Django code here
+
+    token = "6600979703:AAGvzsf4sdOgc3MbVEs2udVoNIj_vBWOpk4"
+    run_bot(token)  # Run the Telegram bot
 
 if __name__ == "__main__":
     main()
+
+
+
+# #!/usr/bin/env python
+# """Django's command-line utility for administrative tasks."""
+# import os
+# import sys
+# from .telegram_bot import run_bot 
+
+
+# def main():
+#     """Run administrative tasks."""
+#     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "server.settings")
+#     try:
+#         from django.core.management import execute_from_command_line
+#     except ImportError as exc:
+#         raise ImportError(
+#             "Couldn't import Django. Are you sure it's installed and "
+#             "available on your PYTHONPATH environment variable? Did you "
+#             "forget to activate a virtual environment?"
+#         ) from exc
+#     execute_from_command_line(sys.argv)
+
+
+# if __name__ == "__main__":
+#     main()
